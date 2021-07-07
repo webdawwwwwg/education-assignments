@@ -35,7 +35,7 @@ Inside the folder, you are now ready to run the first terraform command for this
 * Before any other project files are present in the folder.
 * After any other project files are present in the folder.
 
-Since this project is new, initialize the project now, before any other project files are present.
+Since this project is new, initialize the project now, before any other project files are present. We will show you what `terraform init` does when there are files present in a later step.
 
 ```shell
 $ terraform init
@@ -45,7 +45,9 @@ The directory has no Terraform configuration files. You may begin working
 with Terraform immediately by creating Terraform configuration files.
 ```
 
-As the output from the command says, you are now ready to begin adding files to this project.
+With the terraform project initialized, you are now ready to begin adding files to this project.
+
+## Building out a terraform project
 
 
 
