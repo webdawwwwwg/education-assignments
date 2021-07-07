@@ -19,11 +19,11 @@ Before starting this guide, you will need the following tools installed on your 
 
 ## Creating a new terraform project
 
-
+To start, create a new folder for your terraform project. This can be any name, but we recommend using a name that is easy to remember and relevant to what you are building. In this case, since you are getting started with Terraform, name it `terraform-getting-started`. Once created, navigate into the folder.
 
 ```shell
-$ mkdir terraform-demo
-$ cd terraform-demo
+$ mkdir terraform-getting-started
+$ cd terraform-getting-started
 ```
 
 Next, create a file for your Terraform configuration code.
