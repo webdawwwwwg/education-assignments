@@ -17,7 +17,7 @@ Before starting this guide, you will need the following tools installed on your 
 * Terraform. If you have not used or installed Terraform prior to this guide, visit the [Terraform installation guide](https://learn.hashicorp.com/tutorials/terraform/install-cli) and install it using the instructions for your platform (Windows, MacOS, Linux).
 * Docker. In this guide, you will deploy a docker container to your local environment. Terraform doesn't install Docker for you. If you haven't installed Docker, navigate to Docker's [Get Docker guide](https://docs.docker.com/get-docker/) to learn how to install it in your environment.
 
-## Creating a new terraform project
+## Creating a new terraform project folder
 
 To start, create a new folder for your terraform project. This can be any name, but we recommend using a name that is easy to remember and relevant to what you are building. In this case, since you are getting started with Terraform, name it `terraform-getting-started`. Once the folder is created, navigate into the folder.
 
@@ -25,6 +25,14 @@ To start, create a new folder for your terraform project. This can be any name, 
 $ mkdir terraform-getting-started
 $ cd terraform-getting-started
 ```
+
+
+
+## Initializing a new terraform project
+
+
+
+
 
 Next, create a file for your Terraform configuration code.
 
