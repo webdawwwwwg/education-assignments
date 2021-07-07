@@ -1,5 +1,15 @@
 # Getting Started with Terraform
 
+HashiCorp Terraform is a software tool that enables Developers to define infrastructure using declarative configuration files, with a process known as Infrastructure as Code (IaC). Writing your infrastructure as code enables you to take advantage of industry-standard software practices like Version Control, Continuous Integration and Continuous Delivery, and Testing.
+
+After completing this tutorial, you will know how to:
+
+* Create a new Terraform project
+* The structure of HashiCorp Configuration Langauge (HCL) as related to Terraform
+* Write infrastrucure code with HCL in Terraform
+* Safely deploy a Terraform project
+* Safely terminate a Terraform project
+
 To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html) and download the compressed binary application executable file deliverable for your platform, machine or environment on which you like to run code and do development.
 
 With Terraform installed, let's dive right into it and start creating some infrastructure.
