@@ -412,7 +412,8 @@ Commercial support is available at
 </html>
 ```
 
-![image-20210707151403593](/Users/webdog/Library/Application Support/typora-user-images/image-20210707151403593.png)
+![image](https://user-images.githubusercontent.com/24903897/124830066-01bc8d80-df3f-11eb-8549-5177ce462681.png)
+
 
 ## Cleaning up with terraform `destroy`
 
