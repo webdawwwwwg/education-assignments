@@ -47,15 +47,21 @@ with Terraform immediately by creating Terraform configuration files.
 
 With the terraform project initialized, you are now ready to begin adding files to this project.
 
-## Building out a terraform project
+## Building out a terraform project structure
 
-
-
-Next, create a file for your Terraform configuration code.
+Start building this project by creating three new files in the folder
 
 ```shell
 $ touch main.tf
+$ touch variables.tf
+$ touch outputs.tf
 ```
+
+*  `main.tf` represents the *primary* entrypoint for the *root module* of your project. Each project will have exactly one root module, and is required to exist in the root directory of your project.
+* `variables.tf` represent the variables declared for this project. Variables are used to represent items such as an application name, a docker image, or a version number. Using variables makes your code more organized, and easier to update in the future.
+* `outputs.tf` represent the outputs to stdout when deploying infrastructure with Terraform. Outputs are useful when you want specific information regarding your infrastructure returned back to you. For example, you may want the name of a docker container displayed to you, when confirming whether or not a container was successfully deployed.
+
+Terraform's configuration language is built on top of HashiCorp Configuration Language (HCL). It's primary purpose is to enable you to declare resources for your project, represented as *infrastructure objects*. All other parts of the Terraform language exist to support and streamline the creation of these objects.
 
 Paste the following lines into the file.
 
