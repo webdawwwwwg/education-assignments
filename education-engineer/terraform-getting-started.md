@@ -30,7 +30,22 @@ $ cd terraform-getting-started
 
 ## Initializing a new terraform project
 
+Inside the folder, you are now ready to run the first terraform command for this project. Every terraform project must be initialized before you are able to deploy infrastructure. This initialization can be run in two ways:
 
+* Before any other project files are present in the folder.
+* After any other project files are present in the folder.
+
+Since this project is new, initialize the project now, before any other project files are present.
+
+```shell
+$ terraform init
+Terraform initialized in an empty directory!
+
+The directory has no Terraform configuration files. You may begin working
+with Terraform immediately by creating Terraform configuration files.
+```
+
+As the output from the command says, you are now ready to begin adding files to this project.
 
 
 
