@@ -63,7 +63,9 @@ $ touch outputs.tf
 
 Terraform's configuration language is built on top of HashiCorp Configuration Language (HCL). It's primary purpose is to enable you to declare resources for your project, represented as *infrastructure objects*. All other parts of the Terraform language exist to support and streamline the creation of these objects.
 
-Paste the following lines into the file.
+## Writing Terraform code
+
+Start by opening up `main.tf` in your preferred text editor. Add the following code to the beginning of the file.
 
 ```hcl
 terraform {
@@ -73,9 +75,27 @@ terraform {
     }
   }
 }
+```
+
+This code defines the basic Terraform resource, and specifies that Docker is a required provider, and declares the source of the provider. In your case, this source is `kreuzwerker/docker` the primary Docker provider for Terraform. 
+
+Add the following lines of directly below the previously inserted code:
+
+```hcl
 provider "docker" {
     host = "unix:///var/run/docker.sock"
 }
+```
+
+With the terraform object delcaring docker as a required provider, you are now creating the docker provider resource and specifiying the host location, via the `host` configuration value.
+
+With the provider created, you will now build out the docker container to be deployed with this provider. To do so, you will create two resources, one for the Docker image you'll want to use, and the a resource for the docker container that is built from that image, and the configuration values for that container. Insert these lines of code directly below the previously insert code:
+
+```hcl
+resource "docker_image" "nginx" {
+  name = "nginx:latest"
+}
+
 resource "docker_container" "nginx" {
   image = docker_image.nginx.latest
   name  = "training"
@@ -84,15 +104,42 @@ resource "docker_container" "nginx" {
     external = 80
   }
 }
-resource "docker_image" "nginx" {
-  name = "nginx:latest"
-}
+
 ```
 
-Initialize Terraform with the `init` command. The AWS provider will be installed. 
+The `docker_image` resource specifies the name of the docker image, and it's revision. Since you are deploying a web server, you are using the latest revision of nginx, `nginx:latest`.
+
+The `docker_container` resource uses the  `docker_image` resource by calling its *reference name* with the revision of the image to use in the `image` key. 
+
+Next,  you will specify a name for the container, `training`, and the internal & external ports for the container, `80`. Docker will use these values when building the container.
+
+Initialize Terraform with the `init` command.
 
 ```shell
 $ terraform init
+Initializing provider plugins...
+- Finding latest version of kreuzwerker/docker...
+- Installing kreuzwerker/docker v2.13.0...
+- Installed kreuzwerker/docker v2.13.0 (self-signed, key ID 24E54F214569A8A5)
+
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/cli/plugins/signing.html
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
 ```
 
 You shoud check for any errors. If it ran successfully, provision the resource with the `apply` command.
