@@ -10,7 +10,12 @@ After completing this tutorial, you will know how to:
 * Safely deploy a Terraform project
 * Safely terminate a Terraform project
 
-To install Terraform, simply visit [Terraform.io](https://www.terraform.io/downloads.html) and download the compressed binary application executable file deliverable for your platform, machine or environment on which you like to run code and do development.
+## Prerequisites
+
+Before starting this guide, you will need the following tools installed on your computer:
+
+* Terraform. If you have not used or installed Terraform prior to this guide, visit the [Terraform installation guide](https://learn.hashicorp.com/tutorials/terraform/install-cli) and install it using the instructions for your platform (Windows, MacOS, Linux).
+* Docker. In this guide, you will deploy a docker container to your local environment. Terraform doesn't install Docker for you. If you haven't installed Docker, navigate to Docker's [Get Docker guide](https://docs.docker.com/get-docker/) to learn how to install it in your environment.
 
 With Terraform installed, let's dive right into it and start creating some infrastructure.
 
